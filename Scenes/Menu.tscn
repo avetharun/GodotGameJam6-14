@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://ddknavjxhpvrc"]
+[gd_scene load_steps=3 format=3 uid="uid://ddknavjxhpvrc"]
+
+[ext_resource type="Texture2D" uid="uid://dxga3qaee2lqq" path="res://Assets/BackgroundTest01.png" id="1_n1x7l"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vn6wf"]
 bg_color = Color(0, 0, 0, 1)
@@ -12,7 +14,19 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_n1x7l")
+region_rect = Rect2(0, 0, 512, 512)
+patch_margin_bottom = 325
+
 [node name="PanelContainer" type="PanelContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

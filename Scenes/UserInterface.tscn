@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cocq8fjk1n1b8"]
+[gd_scene load_steps=31 format=3 uid="uid://cocq8fjk1n1b8"]
 
 [ext_resource type="Script" path="res://Scripts/UserInterface.gd" id="1_j6rqu"]
 [ext_resource type="Script" path="res://Scenes/SettingsMenu.gd" id="2_31ag7"]
@@ -6,7 +6,9 @@
 [ext_resource type="Script" path="res://Scenes/SettingsLabel.gd" id="3_acdsr"]
 [ext_resource type="Texture2D" uid="uid://d0brtg4bq4me" path="res://Assets/SettingsGear.png" id="3_mvhrw"]
 [ext_resource type="Texture2D" uid="uid://ca6hr04ugg6cp" path="res://Assets/BackOrSave.png" id="4_bsiqw"]
+[ext_resource type="Texture2D" uid="uid://tud4f2jty1xf" path="res://Assets/ResetIcon.png" id="7_3uj6r"]
 [ext_resource type="Texture2D" uid="uid://diqej7pb0nesr" path="res://Assets/InfoIcon.png" id="7_eowac"]
+[ext_resource type="Script" path="res://Scenes/QuitHandler.gd" id="8_8gx4c"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nsvgm"]
 bg_color = Color(0.12381, 0.281953, 0.396716, 1)
@@ -25,6 +27,24 @@ anti_aliasing_size = 0.493
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y1aig"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i1f4o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jpjql"]
+bg_color = Color(0.12381, 0.281953, 0.396716, 1)
+corner_radius_bottom_left = 64
+shadow_color = Color(0, 0, 0, 0.145098)
+shadow_size = 4
+shadow_offset = Vector2(3, 3)
+anti_aliasing_size = 0.493
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bdslu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u2cus"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uusqg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_flsps"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gbcy8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g5r6r"]
 bg_color = Color(0.12381, 0.281953, 0.396716, 1)
@@ -223,6 +243,57 @@ script = ExtResource("2_31ag7")
 SettingsLabels = [NodePath("Panel2/ScrollContainer/SettingsContainer/AudioLabel"), NodePath("Panel2/ScrollContainer/SettingsContainer/ControlsLabel"), NodePath("Panel2/ScrollContainer/SettingsContainer/GraphicsLabel")]
 RootSettingsContainer = NodePath("Panel2/ScrollContainer/SettingsContainer")
 
+[node name="ResetSettingsButton" type="Panel" parent="SettingsMenu"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -140.0
+offset_bottom = 50.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_jpjql")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="SettingsMenu/ResetSettingsButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bdslu")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_u2cus")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_uusqg")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_flsps")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gbcy8")
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="SettingsMenu/ResetSettingsButton/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 89.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_3uj6r")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SettingsMenu/ResetSettingsButton/Button"]
+layout_mode = 0
+offset_left = 21.0
+offset_right = 161.0
+offset_bottom = 69.0
+scale = Vector2(0.47, 0.47)
+bbcode_enabled = true
+text = "[font_size=50]Reset"
+fit_content = true
+
 [node name="SM_GoToMenu" type="Panel" parent="SettingsMenu"]
 visible = false
 custom_minimum_size = Vector2(140, 0)
@@ -399,6 +470,10 @@ text = "Start"
 layout_mode = 2
 size_flags_vertical = 3
 text = "Quit"
+script = ExtResource("8_8gx4c")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true
 
 [connection signal="pressed" from="MM_OpenSettings/Button" to="MM_OpenSettings" method="set_visible" binds= [false]]
 [connection signal="pressed" from="MM_OpenSettings/Button" to="SettingsMenu" method="set_visible" binds= [true]]
@@ -408,8 +483,10 @@ text = "Quit"
 [connection signal="pressed" from="Pause Menu/VBoxContainer/Button_Resume" to="Pause Menu" method="set_visible" binds= [false]]
 [connection signal="pressed" from="Pause Menu/VBoxContainer/Button_Settings" to="Pause Menu" method="set_visible" binds= [false]]
 [connection signal="pressed" from="Pause Menu/VBoxContainer/Button_Settings" to="SettingsMenu" method="set_visible" binds= [true]]
+[connection signal="pressed" from="SettingsMenu/ResetSettingsButton/Button" to="SettingsMenu" method="ResetSettings"]
 [connection signal="pressed" from="SettingsMenu/SM_GoToMenu/Button" to="SettingsMenu" method="set_visible" binds= [false]]
 [connection signal="pressed" from="SettingsMenu/SM_GoToMenu/Button" to="PanelContainer" method="set_visible" binds= [true]]
 [connection signal="pressed" from="SettingsMenu/SM_GoToPauseScreen/Button" to="Pause Menu" method="set_visible" binds= [true]]
 [connection signal="pressed" from="SettingsMenu/SM_GoToPauseScreen/Button" to="SettingsMenu" method="set_visible" binds= [false]]
 [connection signal="toggled" from="CheckButton" to="." method="SetIsPlayingGame"]
+[connection signal="pressed" from="PanelContainer/MM_Buttons/Quit" to="SettingsMenu" method="Save"]

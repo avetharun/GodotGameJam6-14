@@ -5,28 +5,28 @@
 
 [sub_resource type="Resource" id="Resource_bdjrb"]
 script = ExtResource("1_qocur")
-Type = "Slider Zero to One"
+Type = "Slider"
 State = ""
 DefaultValue = "1"
 Name = "[Audio] Master Volume"
 
 [sub_resource type="Resource" id="Resource_yh84j"]
 script = ExtResource("1_qocur")
-Type = "Slider Zero to One"
+Type = "Slider"
 State = ""
 DefaultValue = "1"
 Name = "[Audio] Voice Volume"
 
 [sub_resource type="Resource" id="Resource_u3yab"]
 script = ExtResource("1_qocur")
-Type = "Slider Zero to One"
+Type = "Slider"
 State = ""
 DefaultValue = "1"
 Name = "[Audio] Music Volume"
 
 [sub_resource type="Resource" id="Resource_yt170"]
 script = ExtResource("1_qocur")
-Type = "Slider Zero to One"
+Type = "Slider"
 State = ""
 DefaultValue = "1"
 Name = "[Audio] SFX Volume"
@@ -34,24 +34,24 @@ Name = "[Audio] SFX Volume"
 [sub_resource type="Resource" id="Resource_3e386"]
 script = ExtResource("1_qocur")
 Type = "Keybind"
-State = "Visible"
+State = null
 DefaultValue = "W"
 Name = "[Controls] Move Up"
 
 [sub_resource type="Resource" id="Resource_0o5fy"]
 script = ExtResource("1_qocur")
 Type = "Keybind"
-State = "Visible"
+State = null
 DefaultValue = "S"
 Name = "[Controls] Move Down"
 
 [sub_resource type="Resource" id="Resource_76ush"]
 script = ExtResource("1_qocur")
 Type = "Switch"
-State = "Visible"
-DefaultValue = "true"
+State = null
+DefaultValue = "false"
 Name = "[Graphics] Allow Explicit content / Gore"
 
 [resource]
 script = ExtResource("1_r0r1t")
-Settings = Array[ExtResource("1_qocur")]([SubResource("Resource_bdjrb"), SubResource("Resource_yh84j"), SubResource("Resource_u3yab"), SubResource("Resource_yt170"), SubResource("Resource_3e386"), SubResource("Resource_0o5fy"), SubResource("Resource_76ush")])
+Settings = [SubResource("Resource_bdjrb"), SubResource("Resource_yh84j"), SubResource("Resource_u3yab"), SubResource("Resource_yt170"), SubResource("Resource_3e386"), SubResource("Resource_0o5fy"), SubResource("Resource_76ush")]

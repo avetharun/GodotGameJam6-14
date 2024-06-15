@@ -8,6 +8,7 @@ static var INSTANCE : UserInterface
 @export var MainMenuRelatedUI : Array[Control]
 @export var InGamePauseMenuRelatedUI : Array[Control]
 
+
 func _ready():
 	INSTANCE = self
 
