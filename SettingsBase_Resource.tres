@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="SettingsBase" load_steps=9 format=3 uid="uid://clm1rqj5flpso"]
+
+[ext_resource type="Script" path="res://Scripts/SettingsValue.gd" id="1_qocur"]
+[ext_resource type="Script" path="res://Scripts/SettingsBase.gd" id="1_r0r1t"]
+
+[sub_resource type="Resource" id="Resource_bdjrb"]
+script = ExtResource("1_qocur")
+Type = "Slider Zero to One"
+DefaultValue = "1"
+Name = "[Audio] Master Volume"
+
+[sub_resource type="Resource" id="Resource_yh84j"]
+script = ExtResource("1_qocur")
+Type = "Slider Zero to One"
+DefaultValue = "1"
+Name = "[Audio] Voice Volume"
+
+[sub_resource type="Resource" id="Resource_u3yab"]
+script = ExtResource("1_qocur")
+Type = "Slider Zero to One"
+DefaultValue = "1"
+Name = "[Audio] Music Volume"
+
+[sub_resource type="Resource" id="Resource_yt170"]
+script = ExtResource("1_qocur")
+Type = "Slider Zero to One"
+DefaultValue = "1"
+Name = "[Audio] SFX Volume"
+
+[sub_resource type="Resource" id="Resource_3e386"]
+script = ExtResource("1_qocur")
+Type = "Keybind"
+DefaultValue = "W"
+Name = "[Controls] Move Up"
+
+[sub_resource type="Resource" id="Resource_0o5fy"]
+script = ExtResource("1_qocur")
+Type = "Keybind"
+DefaultValue = "S"
+Name = "[Controls] Move Down"
+
+[resource]
+script = ExtResource("1_r0r1t")
+Settings = Array[ExtResource("1_qocur")]([SubResource("Resource_bdjrb"), SubResource("Resource_yh84j"), SubResource("Resource_u3yab"), SubResource("Resource_yt170"), SubResource("Resource_3e386"), SubResource("Resource_0o5fy")])

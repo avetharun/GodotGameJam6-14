@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1y76sd432ye"]
+
+[ext_resource type="Texture2D" uid="uid://da13n8q0hbua6" path="res://Assets/MenuButtons.png" id="1_h58h8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nsvgm"]
+bg_color = Color(0.12381, 0.281953, 0.396716, 1)
+corner_radius_bottom_right = 64
+shadow_color = Color(0, 0, 0, 0.145098)
+shadow_size = 4
+shadow_offset = Vector2(3, 3)
+anti_aliasing_size = 0.493
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cw2s7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_walwb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y8oud"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y1aig"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i1f4o"]
+
+[node name="ButtonPanel" type="Panel"]
+custom_minimum_size = Vector2(140, 0)
+offset_right = 140.0
+offset_bottom = 50.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nsvgm")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cw2s7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_walwb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_y8oud")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_y1aig")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i1f4o")
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_h58h8")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

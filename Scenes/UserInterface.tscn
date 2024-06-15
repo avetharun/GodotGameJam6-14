@@ -1,0 +1,407 @@
+[gd_scene load_steps=23 format=3 uid="uid://cocq8fjk1n1b8"]
+
+[ext_resource type="Script" path="res://Scripts/UserInterface.gd" id="1_j6rqu"]
+[ext_resource type="Script" path="res://Scenes/SettingsMenu.gd" id="2_31ag7"]
+[ext_resource type="Texture2D" uid="uid://da13n8q0hbua6" path="res://Assets/MenuButtons.png" id="2_e6thc"]
+[ext_resource type="Script" path="res://Scenes/SettingsLabel.gd" id="3_acdsr"]
+[ext_resource type="Texture2D" uid="uid://d0brtg4bq4me" path="res://Assets/SettingsGear.png" id="3_mvhrw"]
+[ext_resource type="Texture2D" uid="uid://ca6hr04ugg6cp" path="res://Assets/BackOrSave.png" id="4_bsiqw"]
+[ext_resource type="Texture2D" uid="uid://diqej7pb0nesr" path="res://Assets/InfoIcon.png" id="7_eowac"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nsvgm"]
+bg_color = Color(0.12381, 0.281953, 0.396716, 1)
+corner_radius_bottom_right = 64
+shadow_color = Color(0, 0, 0, 0.145098)
+shadow_size = 4
+shadow_offset = Vector2(3, 3)
+anti_aliasing_size = 0.493
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cw2s7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_walwb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y8oud"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y1aig"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i1f4o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g5r6r"]
+bg_color = Color(0.12381, 0.281953, 0.396716, 1)
+corner_radius_bottom_right = 64
+shadow_color = Color(0, 0, 0, 0.145098)
+shadow_size = 4
+shadow_offset = Vector2(3, 3)
+anti_aliasing_size = 0.493
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p2bip"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w1cnc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vk4og"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p3eqb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jr8fp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k5rim"]
+bg_color = Color(1, 1, 1, 1)
+border_width_top = 75
+border_width_bottom = 14
+border_color = Color(0.8, 0.8, 0.8, 0)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_di0h8"]
+content_margin_left = 24.0
+content_margin_top = 34.0
+bg_color = Color(0.382181, 0.582968, 1, 1)
+draw_center = false
+border_color = Color(0.133333, 0.133333, 0.133333, 1)
+border_blend = true
+corner_detail = 1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ooius"]
+
+[node name="UserInterface" type="Control" node_paths=PackedStringArray("MainMenuRelatedUI", "InGamePauseMenuRelatedUI")]
+z_index = 921
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+script = ExtResource("1_j6rqu")
+MainMenuRelatedUI = [NodePath("MM_OpenSettings"), NodePath("SettingsMenu/SM_GoToMenu"), NodePath("PanelContainer/MM_Buttons")]
+InGamePauseMenuRelatedUI = [NodePath("IG_OpenPauseMenu"), NodePath("SettingsMenu/SM_GoToPauseScreen")]
+
+[node name="MM_OpenSettings" type="Panel" parent="."]
+visible = false
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 50.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nsvgm")
+
+[node name="Button" type="Button" parent="MM_OpenSettings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cw2s7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_walwb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_y8oud")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_y1aig")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i1f4o")
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="MM_OpenSettings/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_mvhrw")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MM_OpenSettings/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="IG_OpenPauseMenu" type="Panel" parent="."]
+visible = false
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 50.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nsvgm")
+
+[node name="Button" type="Button" parent="IG_OpenPauseMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cw2s7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_walwb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_y8oud")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_y1aig")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i1f4o")
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="IG_OpenPauseMenu/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_e6thc")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="IG_OpenPauseMenu/Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.08
+anchor_right = 1.364
+anchor_bottom = 1.0
+offset_right = 110.04
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.575, 0.575)
+mouse_filter = 2
+bbcode_enabled = true
+text = "[font_size=50]Pause"
+
+[node name="Pause Menu" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.382
+anchor_top = 0.363
+anchor_right = 0.618
+anchor_bottom = 0.639
+offset_left = -0.0640259
+offset_top = 38.776
+offset_right = 0.0639648
+offset_bottom = -39.0721
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button_Resume" type="Button" parent="Pause Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+text = "Resume"
+
+[node name="Button_Settings" type="Button" parent="Pause Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+text = "Settings"
+
+[node name="Button_Menu" type="Button" parent="Pause Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 35
+text = "Menu"
+
+[node name="SettingsMenu" type="Panel" parent="." node_paths=PackedStringArray("SettingsLabels", "RootSettingsContainer")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_31ag7")
+SettingsLabels = [NodePath("Panel2/ScrollContainer/SettingsContainer/AudioLabel"), NodePath("Panel2/ScrollContainer/SettingsContainer/ControlsLabel")]
+RootSettingsContainer = NodePath("Panel2/ScrollContainer/SettingsContainer")
+
+[node name="SM_GoToMenu" type="Panel" parent="SettingsMenu"]
+visible = false
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 50.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g5r6r")
+
+[node name="Button" type="Button" parent="SettingsMenu/SM_GoToMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_p2bip")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_w1cnc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vk4og")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_p3eqb")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jr8fp")
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="SettingsMenu/SM_GoToMenu/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_bsiqw")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SettingsMenu/SM_GoToMenu/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="SM_GoToPauseScreen" type="Panel" parent="SettingsMenu"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 50.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g5r6r")
+
+[node name="Button" type="Button" parent="SettingsMenu/SM_GoToPauseScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_p2bip")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_w1cnc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vk4og")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_p3eqb")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jr8fp")
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="SettingsMenu/SM_GoToPauseScreen/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_bsiqw")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SettingsMenu/SM_GoToPauseScreen/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel2" type="Panel" parent="SettingsMenu"]
+clip_children = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.079
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -16.192
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_k5rim")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="SettingsMenu/Panel2"]
+clip_contents = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_di0h8")
+follow_focus = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="SettingsContainer" type="VBoxContainer" parent="SettingsMenu/Panel2/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="AudioLabel" type="Label" parent="SettingsMenu/Panel2/ScrollContainer/SettingsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 51
+text = "Audio"
+script = ExtResource("3_acdsr")
+LabelKey = "Audio"
+
+[node name="ControlsLabel" type="Label" parent="SettingsMenu/Panel2/ScrollContainer/SettingsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 51
+text = "Controls
+"
+script = ExtResource("3_acdsr")
+LabelKey = "Controls"
+
+[node name="CheckButton" type="CheckButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.924
+anchor_right = 0.28
+anchor_bottom = 1.0
+offset_top = 0.247986
+offset_right = 0.440002
+offset_bottom = 5.0
+text = "Toggle play state 
+(On: In-game UI, Off: Main Menu UI)"
+icon = ExtResource("7_eowac")
+expand_icon = true
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 348.0
+offset_top = 261.0
+offset_right = -348.0
+offset_bottom = -261.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ooius")
+
+[node name="MM_Buttons" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="PanelContainer/MM_Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Start"
+
+[node name="Quit" type="Button" parent="PanelContainer/MM_Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Quit"
+
+[connection signal="pressed" from="MM_OpenSettings/Button" to="MM_OpenSettings" method="set_visible" binds= [false]]
+[connection signal="pressed" from="MM_OpenSettings/Button" to="SettingsMenu" method="set_visible" binds= [true]]
+[connection signal="pressed" from="MM_OpenSettings/Button" to="PanelContainer" method="set_visible" binds= [false]]
+[connection signal="pressed" from="IG_OpenPauseMenu/Button" to="IG_OpenPauseMenu" method="set_visible" binds= [false]]
+[connection signal="pressed" from="IG_OpenPauseMenu/Button" to="Pause Menu" method="set_visible" binds= [true]]
+[connection signal="pressed" from="Pause Menu/VBoxContainer/Button_Resume" to="Pause Menu" method="set_visible" binds= [false]]
+[connection signal="pressed" from="Pause Menu/VBoxContainer/Button_Settings" to="Pause Menu" method="set_visible" binds= [false]]
+[connection signal="pressed" from="Pause Menu/VBoxContainer/Button_Settings" to="SettingsMenu" method="set_visible" binds= [true]]
+[connection signal="pressed" from="SettingsMenu/SM_GoToMenu/Button" to="SettingsMenu" method="set_visible" binds= [false]]
+[connection signal="pressed" from="SettingsMenu/SM_GoToMenu/Button" to="PanelContainer" method="set_visible" binds= [true]]
+[connection signal="pressed" from="SettingsMenu/SM_GoToPauseScreen/Button" to="Pause Menu" method="set_visible" binds= [true]]
+[connection signal="pressed" from="SettingsMenu/SM_GoToPauseScreen/Button" to="SettingsMenu" method="set_visible" binds= [false]]
+[connection signal="toggled" from="CheckButton" to="." method="SetIsPlayingGame"]

@@ -11,13 +11,30 @@ config_version=5
 [application]
 
 config/name="Godot Game Jam 6-14"
+run/main_scene="res://Scenes/Menu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
+boot_splash/show_image=false
 config/icon="res://icon.svg"
+
+[autoload]
+
+Constants="*res://constants.gd"
+
+[display]
+
+window/energy_saving/keep_screen_on=false
 
 [dotnet]
 
 project/assembly_name="Godot Game Jam 6-14"
 
+[gui]
+
+common/snap_controls_to_pixels=false
+theme/snap_controls_to_pixels=false
+
 [rendering]
 
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
