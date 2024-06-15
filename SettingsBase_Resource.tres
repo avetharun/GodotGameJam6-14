@@ -34,23 +34,23 @@ Name = "[Audio] SFX Volume"
 [sub_resource type="Resource" id="Resource_3e386"]
 script = ExtResource("1_qocur")
 Type = "Keybind"
-State = "Hidden"
+State = "Visible"
 DefaultValue = "W"
 Name = "[Controls] Move Up"
 
 [sub_resource type="Resource" id="Resource_0o5fy"]
 script = ExtResource("1_qocur")
 Type = "Keybind"
-State = "Hidden"
+State = "Visible"
 DefaultValue = "S"
 Name = "[Controls] Move Down"
 
 [sub_resource type="Resource" id="Resource_76ush"]
 script = ExtResource("1_qocur")
-Type = "Bool"
+Type = "Switch"
 State = "Visible"
-DefaultValue = ""
-Name = "[Graphics] Gore"
+DefaultValue = "true"
+Name = "[Graphics] Allow Explicit content / Gore"
 
 [resource]
 script = ExtResource("1_r0r1t")

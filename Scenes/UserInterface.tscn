@@ -218,8 +218,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_force_pass_scroll_events = false
 script = ExtResource("2_31ag7")
-SettingsLabels = [NodePath("Panel2/ScrollContainer/SettingsContainer/AudioLabel"), NodePath("Panel2/ScrollContainer/SettingsContainer/ControlsLabel")]
+SettingsLabels = [NodePath("Panel2/ScrollContainer/SettingsContainer/AudioLabel"), NodePath("Panel2/ScrollContainer/SettingsContainer/ControlsLabel"), NodePath("Panel2/ScrollContainer/SettingsContainer/GraphicsLabel")]
 RootSettingsContainer = NodePath("Panel2/ScrollContainer/SettingsContainer")
 
 [node name="SM_GoToMenu" type="Panel" parent="SettingsMenu"]
@@ -350,6 +351,13 @@ text = "Controls
 "
 script = ExtResource("3_acdsr")
 LabelKey = "Controls"
+
+[node name="GraphicsLabel" type="Label" parent="SettingsMenu/Panel2/ScrollContainer/SettingsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 51
+text = "Graphics"
+script = ExtResource("3_acdsr")
+LabelKey = "Graphics"
 
 [node name="CheckButton" type="CheckButton" parent="."]
 layout_mode = 1

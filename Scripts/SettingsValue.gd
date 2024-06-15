@@ -1,6 +1,6 @@
 class_name SettingsValue extends Resource
 
-@export_enum("Slider Zero to One", "Keybind", "Enum", "String", "Bool") var Type : String
+@export_enum("Slider Zero to One", "Keybind", "Enum", "String", "Switch", "Box", "Bool") var Type : String
 @export_enum("Hidden", "Visible") var State : String = "Visible"
 @export var DefaultValue : String
 @export var Name : String
@@ -15,6 +15,14 @@ func _GenerateInputPart():
             slider.step = 0.005
             slider.value = DefaultValue.to_float()
             return slider;
+        "Switch":
+            var state = CheckButton.new();
+            state.button_pressed = DefaultValue.to_lower().substr(0,4) == "true";
+            return state
+        "Bool", "Box":
+            var state = CheckBox.new();
+            state.button_pressed = DefaultValue.to_lower().substr(0,4) == "true";
+            return state
         "Keybind":
             var kib : KeyInputButton = KeyInputButton.new()
             kib.RequestedKey = OS.find_keycode_from_string(DefaultValue)
