@@ -6,7 +6,7 @@ class_name SettingsMenu extends Panel
 @export var RootSettingsContainer : BoxContainer
 
 func AddSettingsObject(value : SettingsValue):
-	if (value.Name.begins_with("HIDDEN") || value.Name.substr(1).begins_with("HIDDEN")): # ! If we want to hide settings, we can. IE for WIP things like controls!
+	if (value.State == "Hidden"): # ! If we want to hide settings, we can. IE for WIP things like controls!
 		return
 	var AddedIndex = -1;
 	for label in SettingsLabels.duplicate(): # * We don't actually want to modify the base settings object!!!

@@ -6,36 +6,42 @@
 [sub_resource type="Resource" id="Resource_bdjrb"]
 script = ExtResource("1_qocur")
 Type = "Slider Zero to One"
+State = ""
 DefaultValue = "1"
 Name = "[Audio] Master Volume"
 
 [sub_resource type="Resource" id="Resource_yh84j"]
 script = ExtResource("1_qocur")
 Type = "Slider Zero to One"
+State = ""
 DefaultValue = "1"
 Name = "[Audio] Voice Volume"
 
 [sub_resource type="Resource" id="Resource_u3yab"]
 script = ExtResource("1_qocur")
 Type = "Slider Zero to One"
+State = ""
 DefaultValue = "1"
 Name = "[Audio] Music Volume"
 
 [sub_resource type="Resource" id="Resource_yt170"]
 script = ExtResource("1_qocur")
 Type = "Slider Zero to One"
+State = ""
 DefaultValue = "1"
 Name = "[Audio] SFX Volume"
 
 [sub_resource type="Resource" id="Resource_3e386"]
 script = ExtResource("1_qocur")
 Type = "Keybind"
+State = "Hidden"
 DefaultValue = "W"
 Name = "[Controls] Move Up"
 
 [sub_resource type="Resource" id="Resource_0o5fy"]
 script = ExtResource("1_qocur")
 Type = "Keybind"
+State = "Hidden"
 DefaultValue = "S"
 Name = "[Controls] Move Down"
 
