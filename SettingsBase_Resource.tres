@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SettingsBase" load_steps=9 format=3 uid="uid://clm1rqj5flpso"]
+[gd_resource type="Resource" script_class="SettingsBase" load_steps=10 format=3 uid="uid://clm1rqj5flpso"]
 
 [ext_resource type="Script" path="res://Scripts/SettingsValue.gd" id="1_qocur"]
 [ext_resource type="Script" path="res://Scripts/SettingsBase.gd" id="1_r0r1t"]
@@ -45,6 +45,13 @@ State = "Hidden"
 DefaultValue = "S"
 Name = "[Controls] Move Down"
 
+[sub_resource type="Resource" id="Resource_76ush"]
+script = ExtResource("1_qocur")
+Type = "Bool"
+State = "Visible"
+DefaultValue = ""
+Name = "[Graphics] Gore"
+
 [resource]
 script = ExtResource("1_r0r1t")
-Settings = Array[ExtResource("1_qocur")]([SubResource("Resource_bdjrb"), SubResource("Resource_yh84j"), SubResource("Resource_u3yab"), SubResource("Resource_yt170"), SubResource("Resource_3e386"), SubResource("Resource_0o5fy")])
+Settings = Array[ExtResource("1_qocur")]([SubResource("Resource_bdjrb"), SubResource("Resource_yh84j"), SubResource("Resource_u3yab"), SubResource("Resource_yt170"), SubResource("Resource_3e386"), SubResource("Resource_0o5fy"), SubResource("Resource_76ush")])

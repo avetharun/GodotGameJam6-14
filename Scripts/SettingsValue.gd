@@ -1,6 +1,6 @@
 class_name SettingsValue extends Resource
 
-@export_enum("Slider Zero to One", "Keybind") var Type : String
+@export_enum("Slider Zero to One", "Keybind", "Enum", "String", "Bool") var Type : String
 @export_enum("Hidden", "Visible") var State : String = "Visible"
 @export var DefaultValue : String
 @export var Name : String
