@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://fo5ioom5lc4m"]
+[gd_scene load_steps=7 format=3 uid="uid://fo5ioom5lc4m"]
 
 [ext_resource type="Texture2D" uid="uid://07d2xss12k4k" path="res://Assets/tempsprites/8-Tile-Sets/Tile-Sets (64-64).png" id="1_itwja"]
+[ext_resource type="Script" path="res://Scenes/main.gd" id="1_vx4em"]
 [ext_resource type="PackedScene" uid="uid://dhhvsc7ap2rv2" path="res://Scripts/Player/player.tscn" id="2_svyef"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_crbyy"]
@@ -1321,7 +1322,20 @@ tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_crbyy")
 
-[node name="Main" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_27jkk"]
+size = Vector2(2996, 77)
+
+[node name="Main" type="Node2D" node_paths=PackedStringArray("spawn")]
+script = ExtResource("1_vx4em")
+spawn = NodePath("spawn")
+
+[node name="spawn" type="Node2D" parent="."]
+position = Vector2(454, 408)
+
+[node name="Camera2D2" type="Camera2D" parent="."]
+position = Vector2(452, 477)
+scale = Vector2(0.4, 0.4)
+zoom = Vector2(0.5, 0.5)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_cj4o4")
@@ -1335,3 +1349,12 @@ layer_2/tile_data = PackedInt32Array()
 
 [node name="Player" parent="." instance=ExtResource("2_svyef")]
 position = Vector2(452, 477)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(320, 1124)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(4, 602)
+shape = SubResource("RectangleShape2D_27jkk")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
