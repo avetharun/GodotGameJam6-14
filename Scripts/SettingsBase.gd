@@ -8,4 +8,4 @@ func GetSettingsValueFor(name: String):
 	for val in Settings:
 		if (val.HiddenName.contains(name)):
 			return val.GetValue()
-	return ""
+	return null

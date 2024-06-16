@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SettingsBase" load_steps=10 format=3 uid="uid://clm1rqj5flpso"]
+[gd_resource type="Resource" script_class="SettingsBase" load_steps=14 format=3 uid="uid://clm1rqj5flpso"]
 
 [ext_resource type="Script" path="res://Scripts/SettingsValue.gd" id="1_qocur"]
 [ext_resource type="Script" path="res://Scripts/SettingsBase.gd" id="1_r0r1t"]
@@ -6,52 +6,80 @@
 [sub_resource type="Resource" id="Resource_bdjrb"]
 script = ExtResource("1_qocur")
 Type = "Slider"
-State = ""
+State = "Visible"
 DefaultValue = "1"
 Name = "[Audio] Master Volume"
 
 [sub_resource type="Resource" id="Resource_yh84j"]
 script = ExtResource("1_qocur")
 Type = "Slider"
-State = ""
+State = "Visible"
 DefaultValue = "1"
 Name = "[Audio] Voice Volume"
 
 [sub_resource type="Resource" id="Resource_u3yab"]
 script = ExtResource("1_qocur")
 Type = "Slider"
-State = ""
+State = "Visible"
 DefaultValue = "1"
 Name = "[Audio] Music Volume"
 
 [sub_resource type="Resource" id="Resource_yt170"]
 script = ExtResource("1_qocur")
 Type = "Slider"
-State = ""
+State = "Visible"
 DefaultValue = "1"
 Name = "[Audio] SFX Volume"
 
 [sub_resource type="Resource" id="Resource_3e386"]
 script = ExtResource("1_qocur")
 Type = "Keybind"
-State = null
-DefaultValue = "W"
-Name = "[Controls] Move Up"
+State = "Visible"
+DefaultValue = "Space"
+Name = "[Controls] Jump"
 
-[sub_resource type="Resource" id="Resource_0o5fy"]
+[sub_resource type="Resource" id="Resource_w3tv4"]
 script = ExtResource("1_qocur")
 Type = "Keybind"
-State = null
-DefaultValue = "S"
-Name = "[Controls] Move Down"
+State = "Visible"
+DefaultValue = "W"
+Name = "[Controls] Jump (Alternate)"
 
 [sub_resource type="Resource" id="Resource_76ush"]
 script = ExtResource("1_qocur")
 Type = "Switch"
-State = null
+State = "Visible"
 DefaultValue = "false"
 Name = "[Graphics] Allow Explicit content / Gore"
 
+[sub_resource type="Resource" id="Resource_h8w0m"]
+script = ExtResource("1_qocur")
+Type = "Keybind"
+State = "Visible"
+DefaultValue = "A"
+Name = "[Controls] Move Left"
+
+[sub_resource type="Resource" id="Resource_3dr23"]
+script = ExtResource("1_qocur")
+Type = "Keybind"
+State = "Visible"
+DefaultValue = "D"
+Name = "[Controls] Move Right"
+
+[sub_resource type="Resource" id="Resource_3qyqr"]
+script = ExtResource("1_qocur")
+Type = "Keybind"
+State = "Visible"
+DefaultValue = "Left"
+Name = "[Controls] Move Left (Alternate)"
+
+[sub_resource type="Resource" id="Resource_wwtuf"]
+script = ExtResource("1_qocur")
+Type = "Keybind"
+State = "Visible"
+DefaultValue = "Right"
+Name = "[Controls] Move Right (Alternate)"
+
 [resource]
 script = ExtResource("1_r0r1t")
-Settings = [SubResource("Resource_bdjrb"), SubResource("Resource_yh84j"), SubResource("Resource_u3yab"), SubResource("Resource_yt170"), SubResource("Resource_3e386"), SubResource("Resource_0o5fy"), SubResource("Resource_76ush")]
+Settings = Array[ExtResource("1_qocur")]([SubResource("Resource_bdjrb"), SubResource("Resource_yh84j"), SubResource("Resource_u3yab"), SubResource("Resource_yt170"), SubResource("Resource_3e386"), SubResource("Resource_w3tv4"), SubResource("Resource_76ush"), SubResource("Resource_h8w0m"), SubResource("Resource_3dr23"), SubResource("Resource_3qyqr"), SubResource("Resource_wwtuf")])

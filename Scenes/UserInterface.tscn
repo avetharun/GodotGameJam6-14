@@ -304,7 +304,6 @@ mouse_filter = 2
 
 [node name="SettingsMenu" type="Panel" parent="CanvasLayer" node_paths=PackedStringArray("SettingsLabels", "RootSettingsContainer")]
 process_mode = 2
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -363,6 +362,7 @@ offset_left = 21.0
 offset_right = 161.0
 offset_bottom = 138.0
 scale = Vector2(0.47, 0.47)
+mouse_filter = 1
 theme_override_fonts/normal_font = ExtResource("6_4xh35")
 bbcode_enabled = true
 text = "[font_size=50]Reset
