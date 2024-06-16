@@ -150,17 +150,18 @@ SceneName = "MainScene"
 [node name="SavesButton" type="Button" parent="CanvasLayer/MMButtonContainer/MM_Buttons"]
 layout_mode = 2
 size_flags_vertical = 3
+focus_mode = 0
 theme_override_fonts/font = ExtResource("6_4xh35")
 theme_override_font_sizes/font_size = 50
 disabled = true
-text = "Saves"
+text = "Saves (:"
 
 [node name="Quit" type="Button" parent="CanvasLayer/MMButtonContainer/MM_Buttons"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("6_4xh35")
 theme_override_font_sizes/font_size = 50
-text = "Quit"
+text = "Quit Game"
 
 [node name="AudioListener2D" type="AudioListener2D" parent="CanvasLayer"]
 current = true
