@@ -5,7 +5,7 @@ class_name SettingsBase extends Resource
 
 # ! Null check required
 func GetSettingsValueFor(name: String):
-    for val in Settings:
-        if (val.HiddenName.contains(name)):
-            return val.GetValue()
-    return ""
+	for val in Settings:
+		if (val.HiddenName.contains(name)):
+			return val.GetValue()
+	return ""
