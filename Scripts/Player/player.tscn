@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cjo66f06wbont" path="res://icon.svg" id="2_mck57"]
 
 [node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.4, 0.4)
 script = ExtResource("1_y3tu6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
