@@ -140,7 +140,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("6_4xh35")
 theme_override_font_sizes/font_size = 50
-text = "Start"
+text = "Play Demo"
 
 [node name="SceneLoader" type="Node" parent="CanvasLayer/MMButtonContainer/MM_Buttons/StartButton"]
 script = ExtResource("4_nsj7k")
@@ -152,6 +152,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("6_4xh35")
 theme_override_font_sizes/font_size = 50
+disabled = true
 text = "Saves"
 
 [node name="Quit" type="Button" parent="CanvasLayer/MMButtonContainer/MM_Buttons"]
@@ -515,8 +516,6 @@ LabelKey = "Graphics"
 [connection signal="pressed" from="CanvasLayer/MMButtonContainer/MM_Buttons/StartButton" to="." method="UnPauseGame"]
 [connection signal="pressed" from="CanvasLayer/MMButtonContainer/MM_Buttons/StartButton" to="CanvasLayer/MMButtonContainer/MM_Buttons/StartButton/SceneLoader" method="Load"]
 [connection signal="pressed" from="CanvasLayer/MMButtonContainer/MM_Buttons/StartButton" to="." method="SetIsPlayingGame" binds= [true]]
-[connection signal="pressed" from="CanvasLayer/MMButtonContainer/MM_Buttons/SavesButton" to="." method="UnPauseGame"]
-[connection signal="pressed" from="CanvasLayer/MMButtonContainer/MM_Buttons/SavesButton" to="." method="SetIsPlayingGame" binds= [true]]
 [connection signal="pressed" from="CanvasLayer/MMButtonContainer/MM_Buttons/Quit" to="." method="ExitGame"]
 [connection signal="pressed" from="CanvasLayer/MMButtonContainer/MM_Buttons/Quit" to="CanvasLayer/SettingsMenu" method="Save"]
 [connection signal="pressed" from="CanvasLayer/Pause Menu/VBoxContainer/Button_Resume" to="." method="UnPauseGame"]
