@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cocq8fjk1n1b8"]
+[gd_scene load_steps=32 format=3 uid="uid://cocq8fjk1n1b8"]
 
 [ext_resource type="Script" path="res://Scripts/UserInterface.gd" id="1_j6rqu"]
 [ext_resource type="Script" path="res://Scenes/SettingsMenu.gd" id="2_31ag7"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://d0brtg4bq4me" path="res://Assets/SettingsGear.png" id="3_mvhrw"]
 [ext_resource type="Texture2D" uid="uid://ca6hr04ugg6cp" path="res://Assets/BackOrSave.png" id="4_bsiqw"]
 [ext_resource type="Script" path="res://Scenes/SceneLoader.gd" id="4_nsj7k"]
-[ext_resource type="PackedScene" uid="uid://b38cr2vcj3t34" path="res://Scenes/main.tscn" id="5_7p65d"]
 [ext_resource type="FontFile" uid="uid://sh2unalhl1rg" path="res://Assets/Fonts/ReenieBeanie-Regular.ttf" id="6_4xh35"]
 [ext_resource type="Texture2D" uid="uid://tud4f2jty1xf" path="res://Assets/ResetIcon.png" id="7_3uj6r"]
 [ext_resource type="Texture2D" uid="uid://diqej7pb0nesr" path="res://Assets/InfoIcon.png" id="7_eowac"]
@@ -145,7 +144,7 @@ text = "Start"
 
 [node name="SceneLoader" type="Node" parent="CanvasLayer/MMButtonContainer/MM_Buttons/StartButton"]
 script = ExtResource("4_nsj7k")
-SceneToLoad = ExtResource("5_7p65d")
+SceneToLoadPath = &"res://Scenes/main.tscn"
 SceneName = "MainScene"
 
 [node name="SavesButton" type="Button" parent="CanvasLayer/MMButtonContainer/MM_Buttons"]

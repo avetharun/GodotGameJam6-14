@@ -1,7 +1,8 @@
 class_name SceneLoader extends Node
 
-
-@export var SceneToLoad : PackedScene
+# * The scene to load. Default for Load()
+@export var SceneToLoadPath : StringName
+# * The scene name to assign (Or when calling Unload(), the )
 @export var SceneName: String
 
 func Unload():
@@ -13,7 +14,7 @@ func UnloadAllRuntimeScenes():
 		if child.has_meta("SCN_LOADED_AT_RUNTIME") && !child.has_meta("SCNMGR_DISABLE_AUTO_UNLOAD"):
 			child.queue_free()
 func Load():
-	LoadFromScene(SceneToLoad)
+	LoadFromPath(SceneToLoadPath)
 func LoadFromScene(scene:PackedScene):
 	var newScene = scene.instantiate()
 	newScene.set_meta("SCN_NAME", SceneName) 
