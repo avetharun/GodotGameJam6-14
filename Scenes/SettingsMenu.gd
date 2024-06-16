@@ -49,8 +49,6 @@ func Load():
 	for settings_value in baseSettings.Settings:
 		AddSettingsObject(settings_value);
 	pass
-func _ready():
-	Load()
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
 		Save()

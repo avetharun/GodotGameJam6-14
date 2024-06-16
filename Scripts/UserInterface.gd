@@ -7,10 +7,13 @@ static var INSTANCE : UserInterface
 
 @export var MainMenuRelatedUI : Array[Control]
 @export var InGamePauseMenuRelatedUI : Array[Control]
+@export var SettingsMenuScreen : SettingsMenu
+@export var MainTextFont : Font
 
 
 func _ready():
 	INSTANCE = self
+	SettingsMenuScreen.Load()
 
 func SetIsPlayingGame(state : bool):
 	GameConstants.Instance.IsPlayingGame = state
