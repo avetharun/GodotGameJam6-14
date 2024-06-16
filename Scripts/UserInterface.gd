@@ -13,6 +13,7 @@ static var INSTANCE : UserInterface
 func _ready():
 	INSTANCE = self
 	SettingsMenuScreen.Load()
+	get_tree().paused = true
 
 func SetIsPlayingGame(state : bool):
 	GameConstants.Instance.IsPlayingGame = state
@@ -24,7 +25,11 @@ func _process(_delta):
 func go_to_menu():
 	pass
 
+func PauseGame():
+	get_tree().paused = true
 
+func UnPauseGame():
+	get_tree().paused = false
 
 func ExitGame(): 
 	if (!is_inside_tree()): return
