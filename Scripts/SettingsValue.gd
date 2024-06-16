@@ -34,6 +34,12 @@ static func FromIniFile(file:ConfigFile) -> Array[SettingsValue]:
 		arr.append(kv)
 	return arr
 var holder : Control
+func GetValue():
+	var val1 = DefaultValue
+	if (holder is KeyInputButton): val1 =  OS.get_keycode_string((holder as KeyInputButton).RequestedKey)
+	elif (holder is HSlider): val1 = (holder as HSlider).value
+	elif (holder is CheckButton or holder is CheckBox): val1 = (holder as BaseButton).button_pressed
+	return val1
 # INTERNAL: Generates the required input node for the type of settings 
 func _GenerateInputPart():
 	match StringName(Type):

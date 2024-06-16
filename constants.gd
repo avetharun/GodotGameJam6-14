@@ -11,4 +11,3 @@ func _ready():
 	var ui_scn := ui_scn_obj as UserInterface # ! WHAT THE FRESH FUCK IS THIS?????
 	ui_src = ui_scn
 	add_child(ui_scn)
-

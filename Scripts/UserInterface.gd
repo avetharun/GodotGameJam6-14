@@ -11,6 +11,7 @@ static var INSTANCE : UserInterface
 @export var MainTextFont : Font
 
 
+
 func _ready():
 	INSTANCE = self
 	SettingsMenuScreen.Load()

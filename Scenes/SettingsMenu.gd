@@ -10,12 +10,16 @@ func AddSettingsObject(value : SettingsValue):
 		return
 	var AddedIndex = -1;
 	value.HiddenName = value.Name # ! COPY NEEDED!!!
+	var regex = RegEx.new()
+	# * Replace anything in between %{ and }% (ie "%{some_text}%" would be replaced to "")
+	regex.compile("\\%\\{([^\\)]+)\\}\\%")
 	for label in SettingsLabels: # * We don't actually want to modify the base settings object!!!
 		if (value.HiddenName.begins_with(label.LabelKey) || value.HiddenName.substr(1).begins_with(label.LabelKey)):
 			value.Name = value.Name.replace(label.LabelKey +".", "");
 			value.Name = value.Name.replace(label.LabelKey +"_", "");
 			value.Name = value.Name.replace(label.LabelKey +"-", "");
 			value.Name = value.Name.replace("[" +label.LabelKey +"]", "");
+			value.Name = regex.sub(value.Name, "")
 			value.Name.dedent();
 			label.add_sibling(value.GenerateSettingsTable())
 			return
