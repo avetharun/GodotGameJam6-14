@@ -491,6 +491,7 @@ script = ExtResource("3_acdsr")
 LabelKey = "Graphics"
 
 [connection signal="toggled" from="CanvasLayer/CheckButton" to="." method="SetIsPlayingGame"]
+[connection signal="pressed" from="CanvasLayer/MMButtonContainer/MM_Buttons/StartButton" to="." method="SetIsPlayingGame" binds= [true]]
 [connection signal="pressed" from="CanvasLayer/MMButtonContainer/MM_Buttons/Quit" to="CanvasLayer/SettingsMenu" method="Save"]
 [connection signal="pressed" from="CanvasLayer/Pause Menu/VBoxContainer/Button_Resume" to="CanvasLayer/Pause Menu" method="set_visible" binds= [false]]
 [connection signal="pressed" from="CanvasLayer/Pause Menu/VBoxContainer/Button_Settings" to="CanvasLayer/Pause Menu" method="set_visible" binds= [false]]
