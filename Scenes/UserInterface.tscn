@@ -211,7 +211,6 @@ text = "Main Menu"
 script = ExtResource("4_nsj7k")
 
 [node name="IG_OpenPauseMenu" type="Panel" parent="CanvasLayer"]
-visible = false
 custom_minimum_size = Vector2(140, 0)
 offset_right = 140.0
 offset_bottom = 50.0
